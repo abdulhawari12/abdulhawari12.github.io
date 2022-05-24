@@ -1,0 +1,727 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html
+{
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
+}
+body
+{
+  -webkit-tap-highlight-color: transparent;
+  font-family: Arial,Georgia;
+  padding-top: 70px;
+  background: #E6F0F7;
+}
+.clear 
+{
+  clear: both;
+}
+nav
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  background: #0099ff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+nav .logo
+{
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+nav .logo span 
+{
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+nav .toggle
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+nav .toggle.active
+{
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+nav .toggle span
+{
+  background: white;
+  width: 30px;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+nav .toggle span:nth-child(1)
+{
+  background: white;
+  width: 25px;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+  transform: translateY(-10px);
+  left: 5px;
+}
+nav .toggle.active span:nth-child(1)
+{
+  background: white;
+  width: 30px;
+  height: 5px;
+  transform: translateY(0px) rotate(45deg);
+}
+nav .toggle.active span:nth-child(2)
+{
+  background: white;
+  width: 30px;
+  height: 5px;
+  transform: translateY(0px) rotate(-45deg);
+}
+nav .toggle span:nth-child(2)
+{
+  background: white;
+  width: 15px;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+  transform: translateY(10px);
+  left: 5px;
+}
+nav .toggle.active span:nth-child(3)
+{
+  transform: translateX(200px);
+}
+.navbar.active
+{
+  left: 0;
+}
+.navbar 
+{
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  left: -200px;
+  top: 50px;
+  background: #0099ff;
+  transition: all 0.2s ease-in-out;
+  z-index: 99;
+}
+.navbar h3
+{
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+.navbar .nav-items
+{
+  padding-top: 50px;
+  background: transparent;
+  width: 100%;
+  height: 100vh;
+}
+.navbar .nav-items a 
+{
+  text-decoration: none;
+}
+.navbar .nav-items .items.aktif
+{
+  background: #E6F0F7;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.navbar .nav-items .items 
+{
+  background: transparent;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.navbar .nav-items .items.aktif i
+{
+  color: #0099ff;
+}
+.navbar .nav-items .items i 
+{
+  font-size: 25x;
+  color: #fff;
+}
+.navbar .nav-items .items.aktif span
+{
+  color: #0099ff;
+}
+.navbar .nav-items .items span
+{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+/* indicator */
+.navbar .nav-items .items.aktif .var1
+{
+  display: block;
+}
+.navbar .nav-items .items .var1
+{
+  background: #0099ff;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  left: 0px;
+  transform: translateY(30px);
+  border-top-right-radius: 100px;
+  display: none;
+}
+.navbar .nav-items .items.aktif .var2
+{
+  display: block;
+}
+.navbar .nav-items .items .var2
+{
+  background: #0099ff;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  left: 0px;
+  transform: translateY(-30px);
+  border-bottom-right-radius: 100px;
+  display: none;
+}
+/* end */
+/* Banner */
+.banner 
+{
+  padding: 10px;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #E6F0F7;
+}
+.banner .banner-title
+{
+  width: 100%;
+  height: 80px;
+  background: #E6F0F7;
+  position: relative;
+  top: -140px;
+  padding: 20px;
+  overflow: hidden;
+}
+.banner .banner-title h3
+{
+  font-size: 20px;
+  font-weight: 700;
+}
+.banner .banner-title b 
+{
+  color: #2898F8;
+}
+.banner .banner-title .sec-text
+{
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: 900;
+  color: #536387;
+}
+.banner .banner-title .sec-text:before
+{
+  content: "";
+  position: absolute;
+  left: 20px;
+  width: 100%;
+  height: 15px;
+  background: #E6F0F7;
+  border-left: 2px solid #0099ff;
+  animation: animated 3s steps(100) infinite;
+}
+@keyframes animated{
+  40%,60%{
+    left: 213px;
+  }
+  100%{
+    left: 20px;
+  }
+}
+.banner .hero
+{
+  width: 200px;
+  position: absolute;
+  height: 200px;
+  padding: 20px;
+  border-radius: 100% 100% 55% 100% / 83% 100% 100% 100%;
+  background: linear-gradient(180deg,#448AFF,#40C4FF);
+  overflow: hidden;
+  right: 0;
+}
+.banner .hero img 
+{
+  width: 150px;
+  height: 150px;
+  position: relative;
+  bottom: -30px;
+  right: -30px;
+}
+/* End Banner */
+
+
+/* About */
+#about svg
+{
+  transform: translateY(35px);
+}
+.about 
+{
+  margin-top: 30px;
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+  background: #fff;
+}
+.about h3
+{
+  font-size: 20px;
+  font-weight: 900;
+  color: #0099ff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.about .about-title
+{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-weight: 900;
+  font-size: 15px;
+  color: #536387;
+}
+/* End About */
+
+/* Projects */
+#projects
+{
+  width: 100%;
+  margin-bottom: 60px;
+  background: #E6F0F7;
+}
+#projects h3
+{
+  font-size: 20px;
+  font-weight: 700;
+  color: #0099ff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#projects .card 
+{
+  width: 100%;
+  height: 200%;
+  background: transparent;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#projects .card .card-title
+{
+  width: 100%;
+  background: transparent;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+#projects .card .card-title h4
+{
+  font-size: 18px;
+  font-weight: 700;
+  color: #11101d;
+  margin-bottom: 30px;
+}
+#projects .card .card-title .subtitle
+{
+  width: 100%;
+}
+#projects .card .card-title .subtitle span 
+{
+  color: #0099ff;
+}
+#projects .card .card-title .subtitle p
+{
+  font-size: 14px;
+  font-weight: 700;
+  color: #536387;
+}
+#projects .card .card-box
+{
+  margin-top: 30px;
+  width: 300px;
+  background: transparent;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.05);
+}
+#projects .card .card-box img
+{
+  width: 100%;
+  height: 500px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#projects .card .card-box a button
+{
+  width: 150px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #0099ff;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#projects .card .card-box a
+{
+  text-decoration: none;
+}
+
+/* End project */
+
+/* Parallax */
+.svg{
+				position: relative;
+				height: 60px;
+				width: 100%;
+				background: transparent;
+				margin-top: 100px;
+}	
+.svg .waves{
+				width: 100%;
+}
+.parallax > use {
+    animation: moveForever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 12s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 17s;
+}
+
+@keyframes moveForever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+/* End Parallax */
+
+/* contact form */
+
+/* alert */
+.blocked
+{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+}
+.blocked i 
+{
+  color: #18D060;
+  background: white;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  position: absolute;
+  top: 150px;
+}
+.blocked .alert-ceklis
+{
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  background: #18D060;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  position: absolute;
+  top: 300px;
+}
+.blocked button
+{
+  width: 50%;
+  height: 50px;
+  background: #0099ff;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+/* end*/
+#contact
+{
+  width: 100%;
+  background: #0099ff;
+  padding: 30px;
+  padding-top: 90px;
+}
+#contact h3
+{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#contact .email
+{
+  width: 100%;
+  height: 50px;
+  background: white;
+  color: #11101d;
+  border-radius: 10px;
+  margin-bottom:50px;
+}
+#contact .email label
+{
+  position: absolute;
+  font-size: 15px;
+  color: #0099ff;
+  background: transparent;
+  font-weight: 700;
+  transform: translateX(-320px) translateY(15px);
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+#email:focus ~ label,
+#email:not(:placeholder-shown)#email:not(:focus) ~ label
+{
+  transform: translateX(-320px) translateY(-20px);
+  color: white;
+}
+#contact .textarea
+{
+  width: 100%;
+  height: 150px;
+  background: white;
+  color: #0099ff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+#contact .email input
+{
+  border: none;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  color: #0099ff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: #fff;
+  border-radius: 10px;
+}
+#contact .textarea
+{
+  width: 100%;
+  height: 150px;
+  background: white;
+  color: #0099ff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+#contact .textarea textarea
+{
+  border: none;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+  height: 150px;
+  font-size: 15px;
+  color: #0099ff;
+  font-weight: 900;
+  background: #fff;
+  border-radius: 10px;
+}
+#contact .textarea label
+{
+  position: absolute;
+  font-size: 15px;
+  color: #0099ff;
+  background: transparent;
+  font-weight: 700;
+  transform: translateX(-320px) translateY(15px);
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+#message:focus ~ label,
+#message:not(:placeholder-shown)#message:not(:focus) ~ label
+{
+  transform: translateX(-320px) translateY(-20px);
+  color: white;
+}
+#contact button
+{
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+#contact button:hover
+{
+  background: black;
+  color: white;
+  box-shadow: 0px 10px 30px rgba(255,255,255,0.2);
+}
+.social
+{
+  width: 100%;
+  height: 500px;
+  background: #11101d;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.social h4
+{
+  font-size: 14px;
+  color: rgba(255,255,255,0.2);
+  margin-top: 30px;
+}
+.social .box-social h3
+{
+  font-size: 15px;
+  font-weight: 700;
+  color: #11101d;
+  position: absolute;
+  transform: translateY(-50px) translateX(-90px);
+  background: #FFFF00;
+  width: 100px;
+  border-radius: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.social .box-social
+{
+  width: 70%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #11101d;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.social .box-social i 
+{
+  background: transparent;
+  box-shadow: 0px 5px 10px rgba(255,255,255,0.1);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 100px;
+  font-size: 25px;
+  position: absolute;
+  left: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social .box-social span 
+{
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  position: absolute;
+  left: 120px;
+}
+/* End contact form */
